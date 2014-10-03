@@ -22,7 +22,10 @@ esac
 
 nfd-start || exit $?
 
-echo "To stop, hit ENTER or CTRL-C"
-read
+loop=true
+trap 'loop=false' INT TERM
+while $loop ; do
+  sleep 2
+done
 
 nfd-stop || exit $?
