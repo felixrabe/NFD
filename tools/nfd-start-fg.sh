@@ -27,5 +27,6 @@ trap 'loop=false' INT TERM
 while $loop ; do
   sleep 2
 done
+echo  # insert a line break after '^C'
 
 nfd-stop || exit $?
